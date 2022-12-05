@@ -1,115 +1,46 @@
 import 'package:flutter/material.dart';
 
+// 플러터에서 앱 디자인 넣는 법? 위젯 짜깁기
+// → 글자를 넣고 싶으면? 글자 위젯 삽입하기
 void main() {
+  // 앱 시작 기본 함수 : 매개변수로는 앱 메인 페이지 입력
   runApp(const MyApp());
 }
 
+// 메인 페이지 세팅
+// stless 입력 후 Tab → 클래스 이름 입력
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
+  const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    // return MaterialApp으로 수정
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      // 여기에 코드 작성
+
+      // home: Text('안녕!')
+
+      // home: Icon(Icons.star)
+
+      // home: Image.asset('example.png')
+
+      // Flutter의 사이즈 단위는 LP → 50LP == 1.2cm
+      // 화면에 꽉차게 나오는 이유? 박스를 그리는 좌표(기준점)를 모르기 때문
+      // home: Container( width: 50, height: 50, color: Colors.cyan)
+
+      // 내 자식 위젯의 기준점을 중앙으로 설정해주는 Center() 위젯
+      // 위젯( child: 위젯() ) 형식으로 자식 위젯 사용 가능
+      // 부모 위젯으로 위치 위젯을 사용하면 자식 위젯의 배치를 자유롭게 할 수 있다
+      home: Center(
+        child: Container( width: 50, height: 50, color: Colors.cyan ),
+      )
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-}
+// 반드시 알아야 하는 위젯 4가지
+// 1. 글자 위젯 Text('텍스트')
+// 2. 이미지 위젯 Image.asset('경로')
+// → 프로젝트에 이미지 보관용 assets 폴더 생성 후 이미지 붙여넣기
+// → pubspec.yaml에 assets 폴더 사용하겠다고 명시하기
+// 3. 아이콘 위젯 Icon(Icons.아이콘이름)
+// 4. 네모 박스 위젯 Container( 스타일명: 값 )
