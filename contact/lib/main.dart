@@ -10,8 +10,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        // Column( children: [ 위젯(), 위젯(), ... ] ) 여러 위젯을 세로로 배치
-        body: Column(
+        body: Row(
+            // 문법이 기억나지 않으면 ctrl + space
+
+            // 요소 정렬하기
+            // Row()의 mainAxis == 가로축
+            // Column()의 mainAxis == 세로축
+            mainAxisAlignment: MainAxisAlignment.center,
+            // Row()의 crossAxis == 세로축
+            // Column()의 crossAxis == 가로축
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Icon(Icons.star),
               Icon(Icons.star),
