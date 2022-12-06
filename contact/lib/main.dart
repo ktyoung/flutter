@@ -10,8 +10,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        // Row( children: [ 위젯(), 위젯(), ... ] ) 여러 위젯을 가로로 배치
-        body: Row(
+        // Column( children: [ 위젯(), 위젯(), ... ] ) 여러 위젯을 세로로 배치
+        body: Column(
             children: [
               Icon(Icons.star),
               Icon(Icons.star),
