@@ -10,23 +10,23 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: Row(
-            // 문법이 기억나지 않으면 ctrl + space
-
-            // 요소 정렬하기
-            // Row()의 mainAxis == 가로축
-            // Column()의 mainAxis == 세로축
-            mainAxisAlignment: MainAxisAlignment.center,
-            // Row()의 crossAxis == 세로축
-            // Column()의 crossAxis == 가로축
-            crossAxisAlignment: CrossAxisAlignment.center,
+        appBar: AppBar(
+          title: Text("앱 이름"),
+        ),
+        body: Container(
+          child: Text("내용"),
+        ),
+        bottomNavigationBar: BottomAppBar(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Icon(Icons.star),
-              Icon(Icons.star),
-              Icon(Icons.star)
-            ]
+              Icon( Icons.phone ),
+              Icon( Icons.message ),
+              Icon( Icons.contact_page ),
+            ],
+          ),
         )
-      )
+      ),
     );
   }
 }
