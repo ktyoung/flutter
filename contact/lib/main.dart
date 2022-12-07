@@ -12,13 +12,12 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar( title: Text("앱 이름") ),
        body: Container(
-         width : 150, height: 150, color: Colors.blue,
-         // 개별 방향에 바깥 여백(margin)
-         margin: EdgeInsets.fromLTRB(10, 20, 30, 40),
-         // 모든 방향에 안쪽 여백(padding)
-         padding: EdgeInsets.all(20),
-        
-         child: Text("텍스트"),
+         width : 150, height: 150,
+         // 다른 스타일(테두리 등)은 decoration 안에 작성해야 함
+         decoration: BoxDecoration(
+           color: Colors.blue,
+           border: Border.all(color: Colors.black)
+         ),
        ),
       ),
     );
