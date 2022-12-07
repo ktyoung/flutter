@@ -17,13 +17,17 @@ class MyApp extends StatelessWidget {
           child: Text("내용"),
         ),
         bottomNavigationBar: BottomAppBar(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Icon( Icons.phone ),
-              Icon( Icons.message ),
-              Icon( Icons.contact_page ),
-            ],
+          // width, height, child만 필요한 박스는 SizedBox() → Container보다 가벼움
+          child: SizedBox(
+            height: 70,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Icon( Icons.phone ),
+                Icon( Icons.message ),
+                Icon( Icons.contact_page ),
+              ],
+            ),
           ),
         )
       ),
