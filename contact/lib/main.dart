@@ -11,15 +11,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar( title: Text("앱 이름") ),
-       body: Container(
-         width : 150, height: 150,
-         // 다른 스타일(테두리 등)은 decoration 안에 작성해야 함
-         decoration: BoxDecoration(
-           color: Colors.blue,
-           border: Border.all(color: Colors.black)
-         ),
+
+        // Container()를 Center()로 감싸면 가운데 정렬
+        // 임의 방향으로 정렬하려면 Align()으로 감싸면 됨
+       body: Align(
+         // alignment: Alignment.정렬방향
+         alignment: Alignment.centerLeft,
+         child: Container(
+           // width를 꽉차게 하고 싶으면 무한(double.infinuty)으로 설정
+           width : double.infinity, height: 150, color: Colors.blue,
+           ),
        ),
-      ),
+       ),
     );
   }
 }
