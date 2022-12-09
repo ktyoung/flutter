@@ -11,17 +11,28 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar( title: Text("앱 이름") ),
+        body: SizedBox(
+          child: Text("안녕하세요!",
+              // Text() 위젯 디자인하기 style: TextStyle()
+              style: TextStyle(
+                // 폰트 색상 변경
+                // 1. Colors.색상명
+                // color: Colors.amber
 
-        // Container()를 Center()로 감싸면 가운데 정렬
-        // 임의 방향으로 정렬하려면 Align()으로 감싸면 됨
-       body: Align(
-         // alignment: Alignment.정렬방향
-         alignment: Alignment.centerLeft,
-         child: Container(
-           // width를 꽉차게 하고 싶으면 무한(double.infinuty)으로 설정
-           width : double.infinity, height: 150, color: Colors.blue,
-           ),
-       ),
+                // 2. Color(0xffaaaaaa)
+                // color: Color(0xFFC107FF)
+
+                // 3. Color.fromRGBO()
+                color: Color.fromRGBO(255, 0, 0, 50),
+
+                // 폰트 크기 변경
+                fontSize: 30,
+
+                // 폰트 두께 변경
+                fontWeight: FontWeight.w600,
+              ),
+          ),
+        )
        ),
     );
   }
